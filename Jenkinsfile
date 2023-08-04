@@ -22,6 +22,7 @@ pipeline {
 
             steps {
                 withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
+                    echo credentialsId
                     sh 'docker build -t minhdang2001/mavenJenkinsLab .'
                     sh 'docker push minhdang2001/mavenJenkinsLab'
                 }
